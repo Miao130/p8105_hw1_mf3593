@@ -18,3 +18,14 @@ ggsave("early_january_weather.pdf")
 the dataset contains weather information for EWR in January of the year 2013. It has variables `r colnames(early_january_weather)`. It records temp, dewp, humid, wind_dir, wind_speed, wind_gust, precip, pressure, visib every hour on every day for fifteen days in January 2013. The size of the dataset is `r nrow(early_january_weather)` rows `r ncol(early_january_weather)` columns. The mean temperature is `r mean(early_january_weather[["temp"]])`
 
 According to the scatterplot of this dataset, we can see the temperature fluctuates a lot within one day but overall increased from Jan 01 to Jan 15. The humidity also in general increased over the 15 days. 
+
+#Problem 2
+
+```{r}
+df=tibble(
+  x=rnorm(10),
+  log_vec=x>0,
+  cha_vec=c("1","2","3","4","5","6","7","8","9","10"),
+  fac_vec=factor(c("Low","Medium","Medium","High","Low","Medium","High","High","Low","High"))
+)
+```
