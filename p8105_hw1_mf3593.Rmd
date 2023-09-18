@@ -7,4 +7,11 @@ output: html_document
 
 I'm an R Markdown document! 
 
+#Problem 1
+```{r}
+library(moderndive)
+library(tidyverse)
+data("early_january_weather")
+```
+the dataset contains weather information for EWR in January of the year 2013. It has variables `r colnames(early_january_weather)`. It records temp, dewp, humid, wind_dir, wind_speed, wind_gust, precip, pressure, visib every hour on every day for fifteen days in January 2013. The size of the dataset is `r nrow(early_january_weather)` rows `r ncol(early_january_weather)` columns. The mean temperature is `r mean(early_january_weather[["temp"]])`
 
