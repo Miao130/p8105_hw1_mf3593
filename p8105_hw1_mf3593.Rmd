@@ -33,3 +33,13 @@ mean_log=mean(pull(df,log_vec))
 mean_cha=mean(pull(df,cha_vec))
 mean_fac=mean(pull(df,fac_vec))
 ```
+when calculating mean, mean function works for x and mean_log, but mean_cha and mean_fac return NA and a warning message shows argument is not numeric or logical: returning NA. 
+
+```{r, echo=TRUE, include=FALSE}
+as.numeric(pull(df,log_vec))
+as.numeric(pull(df,cha_vec))
+as.numeric(pull(df,fac_vec))
+```
+
+when apply as.numeric, the vectors are converted to numeric vectors. The logical vector can be converted based on 1 corresponds to TRUE and 0 corresponds to FALSE. The factor vector can be converted to numeric factor where numeric codes corresponding to the factor levels are returned. Character vector is converted to numeric vector of the same values. This explains why we couldn't get mean of factor and character vectors before. We need to convert them.
+
