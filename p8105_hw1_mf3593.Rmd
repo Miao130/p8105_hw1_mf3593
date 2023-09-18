@@ -28,4 +28,8 @@ df=tibble(
   cha_vec=c("1","2","3","4","5","6","7","8","9","10"),
   fac_vec=factor(c("Low","Medium","Medium","High","Low","Medium","High","High","Low","High"))
 )
+mean_x=mean(pull(df,x))
+mean_log=mean(pull(df,log_vec))
+mean_cha=mean(pull(df,cha_vec))
+mean_fac=mean(pull(df,fac_vec))
 ```
