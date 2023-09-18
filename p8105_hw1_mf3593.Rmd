@@ -12,6 +12,9 @@ I'm an R Markdown document!
 library(moderndive)
 library(tidyverse)
 data("early_january_weather")
+ggplot(early_january_weather, aes(x=time_hour,y=temp,color=humid))+geom_point()
+ggsave("early_january_weather.pdf")
 ```
 the dataset contains weather information for EWR in January of the year 2013. It has variables `r colnames(early_january_weather)`. It records temp, dewp, humid, wind_dir, wind_speed, wind_gust, precip, pressure, visib every hour on every day for fifteen days in January 2013. The size of the dataset is `r nrow(early_january_weather)` rows `r ncol(early_january_weather)` columns. The mean temperature is `r mean(early_january_weather[["temp"]])`
 
+According to the scatterplot of this dataset, we can see the temperature fluctuates a lot within one day but overall increased from Jan 01 to Jan 15. The humidity also in general increased over the 15 days. 
