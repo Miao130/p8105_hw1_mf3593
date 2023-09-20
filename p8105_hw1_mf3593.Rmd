@@ -25,7 +25,7 @@ According to the scatterplot of this dataset, we can see the temperature fluctua
 df=tibble(
   x=rnorm(10),
   log_vec=x>0,
-  cha_vec=c("1","2","3","4","5","6","7","8","9","10"),
+  cha_vec=c("A","B","C","D","E","F","G","H","I","J"),
   fac_vec=factor(c("Low","Medium","Medium","High","Low","Medium","High","High","Low","High"))
 )
 mean_x=mean(pull(df,x))
@@ -41,5 +41,5 @@ as.numeric(pull(df,cha_vec))
 as.numeric(pull(df,fac_vec))
 ```
 
-when apply as.numeric, the vectors are converted to numeric vectors. The logical vector can be converted based on 1 corresponds to TRUE and 0 corresponds to FALSE. The factor vector can be converted to numeric factor where numeric codes corresponding to the factor levels are returned. Character vector is converted to numeric vector of the same values. This explains why we couldn't get mean of factor and character vectors before. We need to convert them.
+when apply as.numeric, the factor vector is converted to numeric vector. The logical vector can be converted based on 1 corresponds to TRUE and 0 corresponds to FALSE. The factor vector can be converted to numeric factor where numeric codes corresponding to the factor levels are returned. Character vector is converted only when the original content is a number but in character format. In this case, since it was letters, it was not converted to numeric vector. This explains why we couldn't get mean of factor and character vectors before. We need to convert them to numeric values.
 

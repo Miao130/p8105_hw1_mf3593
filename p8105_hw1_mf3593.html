@@ -391,7 +391,7 @@ days.</p>
 <pre class="r"><code>df=tibble(
   x=rnorm(10),
   log_vec=x&gt;0,
-  cha_vec=c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;,&quot;10&quot;),
+  cha_vec=c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;,&quot;H&quot;,&quot;I&quot;,&quot;J&quot;),
   fac_vec=factor(c(&quot;Low&quot;,&quot;Medium&quot;,&quot;Medium&quot;,&quot;High&quot;,&quot;Low&quot;,&quot;Medium&quot;,&quot;High&quot;,&quot;High&quot;,&quot;Low&quot;,&quot;High&quot;))
 )
 mean_x=mean(pull(df,x))
@@ -405,13 +405,15 @@ mean_cha=mean(pull(df,cha_vec))</code></pre>
 <p>when calculating mean, mean function works for x and mean_log, but
 mean_cha and mean_fac return NA and a warning message shows argument is
 not numeric or logical: returning NA.</p>
-<p>when apply as.numeric, the vectors are converted to numeric vectors.
-The logical vector can be converted based on 1 corresponds to TRUE and 0
-corresponds to FALSE. The factor vector can be converted to numeric
-factor where numeric codes corresponding to the factor levels are
-returned. Character vector is converted to numeric vector of the same
-values. This explains why we couldn’t get mean of factor and character
-vectors before. We need to convert them.</p>
+<p>when apply as.numeric, the factor vector is converted to numeric
+vector. The logical vector can be converted based on 1 corresponds to
+TRUE and 0 corresponds to FALSE. The factor vector can be converted to
+numeric factor where numeric codes corresponding to the factor levels
+are returned. Character vector is converted only when the original
+content is a number but in character format. In this case, since it was
+letters, it was not converted to numeric vector. This explains why we
+couldn’t get mean of factor and character vectors before. We need to
+convert them to numeric values.</p>
 
 
 
