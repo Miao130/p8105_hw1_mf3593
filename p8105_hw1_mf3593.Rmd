@@ -35,7 +35,7 @@ mean_fac=mean(pull(df,fac_vec))
 ```
 when calculating mean, mean function works for x and mean_log, but mean_cha and mean_fac return NA and a warning message shows argument is not numeric or logical: returning NA. 
 
-```{r, echo=TRUE, include=FALSE}
+```{r, echo=TRUE, eval=FALSE}
 as.numeric(pull(df,log_vec))
 as.numeric(pull(df,cha_vec))
 as.numeric(pull(df,fac_vec))
